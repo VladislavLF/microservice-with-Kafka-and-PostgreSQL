@@ -1,0 +1,27 @@
+server:
+  addr: ":8081"
+  read_timeout: 5s
+  write_timeout: 5s
+  idle_timeout: 60s
+
+db:
+  dsn: "postgres://orders:orders@postgres:5432/orders?sslmode=disable&timezone=utc"
+  max_open_conns: 20
+  max_idle_conns: 10
+  conn_max_lifetime: 30m
+
+kafka:
+  brokers: ["kafka:9092"]
+  topic: "orders"
+  group_id: "orders-consumer"
+  min_bytes: 1
+  max_bytes: 1048576
+  commit_interval: 1s
+
+cache:
+  capacity: 10000
+  ttl: 15m
+
+ui:
+  enable: true
+  static_dir: "./web"

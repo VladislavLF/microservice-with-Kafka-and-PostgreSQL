@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Order Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body { font-family: ui-sans-serif, system-ui, Arial, sans-serif; margin: 2rem; }
+      input, button { padding: .6rem .8rem; font-size: 1rem; }
+      button { cursor: pointer; }
+      #result { white-space: pre-wrap; background: #0a0a0a; color: #e6e6e6; padding: 1rem; border-radius: 8px; overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <h1>Просмотр заказа</h1>
+    <p>Введите <code>order_uid</code> и нажмите «Получить».</p>
+    <input id="oid" placeholder="b563feb7b2b84b6test" size="40" />
+    <button id="btn">Получить</button>
+    <div style="height: 1rem"></div>
+    <div id="result"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
