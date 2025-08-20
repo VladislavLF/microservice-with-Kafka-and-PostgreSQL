@@ -18,3 +18,6 @@ go run ./cmd/producer
 # открыть http://localhost:8081/
 ```
 
+## Технологии
+
+Go 1.22, segmentio/kafka-go, pgx/v5, zap, viper, golang-migrate.
