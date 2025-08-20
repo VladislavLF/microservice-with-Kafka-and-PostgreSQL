@@ -20,4 +20,4 @@ go run ./cmd/producer
 
 ## Технологии
 
-Go 1.22, segmentio/kafka-go, pgx/v5, zap, viper, golang-migrate.
+Go 1.24.5, segmentio/kafka-go, pgx/v5, zap, viper, golang-migrate.
