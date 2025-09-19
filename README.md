@@ -1,23 +1,22 @@
 # microservice-with-Kafka-and-PostgreSQL
 
-Микросервис (Go + Kafka + PostgreSQL) для приёма данных заказов из Kafka, сохранения в Postgres, кэширования в памяти и выдачи HTTP API + простой веб-страницы.
+A microservice (Go + Kafka + PostgreSQL) for receiving order data from Kafka, storing it in Postgres, caching it in memory, and serving an HTTP API + simple web page.
 
-## Возможности
-- Подписка на Kafka (topic `orders`), валидация входящих сообщений, транзакционная запись в PostgreSQL.
-- Идемпотентная обработка по `order_uid` (UPSERT).
-- LRU-кэш с TTL и вытеснением. Прогрев кэша на старте.
-- HTTP API: `GET /order/{order_uid}` → JSON.
-- Web-страница: `GET /` — форма ввода `order_uid`.
-- Миграции через `golang-migrate`.
-- Конфигурация из `configs/config.yaml` + ENV (префикс `ORDERS_`).
+## Features
+- Kafka subscription (topic 'orders'), incoming message validation, transactional writing to PostgreSQL.
+- Idempotent processing by 'order_uid' (UPSERT).
+- LRU cache with TTL and eviction. Cache warmup at startup.
+- HTTP API: 'GET /order/{order_uid}' → JSON.
+- Web page: 'GET /' — 'order_uid' input form.
+- Migrations via 'golang-migrate'.
+- Configuration from 'configs/config.yaml' + ENV ('ORDERS_' prefix).
 
-## Быстрый старт
+## Quick Start
 ```bash
 docker compose up -d --build
 go run ./cmd/producer
-# открыть http://localhost:8081/
+# open http://localhost:8081/
 ```
 
-## Технологии
-
+## Technologies
 Go 1.24.5, segmentio/kafka-go, pgx/v5, zap, viper, golang-migrate.
