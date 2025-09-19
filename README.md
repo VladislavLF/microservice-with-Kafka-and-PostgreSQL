@@ -1,5 +1,3 @@
-# microservice-with-Kafka-and-PostgreSQL
-
 A microservice (Go + Kafka + PostgreSQL) for receiving order data from Kafka, storing it in Postgres, caching it in memory, and serving an HTTP API + simple web page.
 
 ## Features
